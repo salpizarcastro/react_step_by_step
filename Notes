@@ -1,0 +1,37 @@
+- Always start component names with capital letter <Greetings />
+- React treats components with lower case letters as DOM <div />
+- Props are ready only
+
+- Class component
+    class GreetingComp extends React.Component {
+      render(){
+        return(Greetings(user));
+      }
+    }
+
+- Function component
+    function Greetingsprops (props){
+      if(props.first){
+        return (
+          <section>
+            <Hello first = {props.first} last = {props.last}/>
+            <Today today = {today} />
+            <Meme url = {meme} />
+          </section>);
+      }
+      return (<h2>Hello Stranger</h2>);
+    }
+
+- States & lifecycle (https://reactjs.org/docs/state-and-lifecycle.html)
+  WRONG: this.state.comment = 'Hello';
+  CORRECT: his.setState({comment: 'Hello'});
+
+- Events (https://reactjs.org/docs/handling-events.html)
+  - Buttons, hyperlinks, etc
+  - are named camelCase
+  - in JSX you pass function as the event handler
+    <button onClick = {eventFunction}> Active Laser </button>
+  - not a hard rule but generally if calling a method without (), bind it!
+      <button onClick={(e) => this.handleClick(e)}>Delete Row</button>
+      <button onClick={this.handleClick.bind(id)}>Delete Row</button>
+      e represents the react event
